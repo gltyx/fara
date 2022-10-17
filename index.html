@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="open world browser roguelike">
+	<meta name="keywords" content="Roguelike,Browser Game,Open World,HTML,CSS,JavaScript">
+	<meta name="author" content="@BrianIsCreative">
+	<title>...</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body id="body">
+	<script src="chs.js"></script>
+	<script src="core.js"></script>
+	<div id="mousemenu" class="mousewindow">
+		<div class="mousewindowlabel" id="mousemenulabel"></div>
+		<div class="mousewindowend" id="mousemenubody"></div>
+	</div>
+	<div id="mousesubmenu" class="mousewindow">
+		<div class="mousewindowlabel" id="mousesubmenulabel"></div>
+		<div class="mousewindowend" id="mousesubmenubody"></div>
+	</div>
+	<div id="tooltip" class="tooltipwindow"></div>
+	<div id="comparewindow" class="comparewindow"></div>
+	<div id="menumask"></div>
+	<div id="messagecontainer">
+		<div id="message">
+			...
+		</div>
+	</div>
+	<div id="loading">
+		<div id="loadingtext">
+			Preparing the grandest of adventures...
+		</div>
+	</div>
+	<div id="container">
+		<div id="leftpanelbutton" class="panelbutton">&lt;</div>
+		<div id="leftpanel">
+			<div class="windowlabelred" id="capslocklabel">
+			</div>
+			<div id="objectivewindow">
+				<div class="windowlabel" id="objectivelabel">
+					<div class="innerwindowlabelleft" id="objectivetext"></div>
+					<div class="innerwindowlabelright" id="objectiveset"></div>
+				</div>
+				<div class="windowend" id="objectives"></div>
+			</div>
+			<div id="shortcutwindow">
+				<div class="windowlabel" id="shortcutlabel">
+					<div class="innerwindowlabelleft" id="shortcuttext"></div>
+					<div class="innerwindowlabelright" id="shortcutset"></div>
+				</div>
+				<div class="windowend" id="shortcuts"></div>
+			</div>
+			
+			
+			<div id="characterwindow">
+				<div id="statuswindow">
+					<div class="windowlabel" id="statuslabel">
+						<div class="innerwindowlabelleft" id="statusleft"></div>
+						<div class="innerwindowlabelright" id="statusright"></div>
+					</div>
+					<div class="statuswindowend" id="status">
+						<div class="healthbarwindow" id="health">
+							<div id="healthbar" class='redbar'></div><!--
+							--><div id="healthbarprevious"></div>
+						</div>
+						<div class="staminabarwindow" id="stamina">
+							<div id="staminabar" class="yellowbar"></div><!--
+							--><div id="staminabarprevious"></div>
+						</div>
+						<div class="timebarwindow" id="timebarwindow">
+							<div id="timebar" class="greenbar"></div>
+							<div id="timebarlabel" class="barlabel"></div>
+						</div>
+						
+						<div id="characterstate"></div>
+						<span class="graytext" id="characteretclabel"></span><span id="characteretc"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="windowlabel" id="holdinglabel">
+				<div class="innerwindowlabelleft" id="holdingleft"></div>
+				<div class="innerwindowlabelright" id="holdingright"></div>
+			</div>
+			<div class="window" id="holding">
+				<span id="characterweapons"></span>
+			</div>
+
+			<div class="windowlabel" id="wearinglabel">
+				<div class="innerwindowlabelleft" id="wearingleft"></div>
+				<div class="innerwindowlabelright" id="wearingright"></div>
+			</div>
+			<div class="window" id="wearing">
+				<span id="characterarmor"></span>
+			</div>
+
+			
+
+			<div class="windowlabel" id="inventorylabel">
+				<div class="innerwindowlabelleft" id="inventoryleft"></div>
+				<div class="innerwindowlabelright" id="inventoryright"></div>
+			</div>
+			<div class="windowend" id="inventory"></div>
+		</div>
+		<div id="middlepanel">
+			<div id="mobilebar"></div>
+			<div class="windowlabelorange" id="gamelocklabel"></div>
+			<div id='middlemap'></div>
+			<div id="textcontainer">
+				<div id="text"></div>
+			</div>
+		</div>
+		<div id="rightpanel">
+			<div id="infobox"></div>
+			<div id="infopanel">
+				<div id="rightshortcutwindow"></div>
+				<div id='rightmap'>
+					<div class="windowlabel" id="maplabel">
+						<div class="innerwindowlabelleft" id="areaname"></div>
+						<div class="innerwindowlabelright" id="arealabel"></div>
+					</div>
+					<div id="canvascontainer">
+						<canvas class="mapcanvas" id="mapcanvas" height="1000" width="1000"></canvas>
+						<canvas class="animationcanvas" id="animationcanvas" height="1000" width="1000"></canvas>
+						<canvas class="indicatorcanvas" id="indicatorcanvas" height="1000" width="1000"></canvas>
+						<canvas class="cursorcanvas" id="cursorcanvas" height="1000" width="1000"></canvas>
+						<div class="mapmarquee" id="mapmarquee"></div>
+					</div>
+				</div>
+				<div id="buildwindow">
+					<div class="windowlabel" id="buildwindowheader">
+						<div class="innerwindowlabelleft" id="buildlabel"></div>
+					</div>
+					<div class="windowend" id="buildsettings"></div>
+				</div>
+				
+				<div id="targetwindow">
+					<div class="windowlabel" id="targetwindowheader">
+						<div class="innerwindowlabelleft" id="targetlabel"></div>
+						<div class="innerwindowlabelright" id="targetaction"></div>
+					</div>
+					<div class="windowend" id="target">
+						<div id="charactertarget"></div>
+						<div id="interactbutton" class="interactbutton"></div>
+					</div>
+				</div>
+				<div class="windowlabel" id="days"></div>
+				<div class="windowend" id="area">
+					<div id="targetlist"></div>
+					<div id="explorebutton" class="explorebutton"></div>
+				</div>
+
+				<div class="windowlabel" id="partylabel"></div>
+				<div class="windowend" id="party"></div>
+				<div class='cmi' id='cmi'></div>
+				<div class='onlinestatus' id='onlinestatus'></div>
+				<div id="cc"><a href="http://twitter.com/BrianIsCreative" target="_blank">&copy; 2016-2021 @BrianIsCreative<br>All Rights Reserved</a></div>
+				<div class="windowlabelgreen" id="savinglabel"></div>
+			</div>
+		</div>
+		<div id="rightpanelbutton" class="panelbutton">&gt;</div>
+		<input id="cl" autocomplete="off" />
+	</div>
+</body>
+<script src="noise.js"></script>
+<script src="engine.js"></script>
+<!--客服 开始-->
+<script src="//g8hh.github.io/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="//g8hh.github.io/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="//g8hh.github.io/static/js/kf.js"></script>
+<!-- 客服 结束 -->
+<!--站长统计-->
+    <div style="display: none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6581389daf4dd6fe7dbb4d20fdcb52a6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </div>
+</html>
