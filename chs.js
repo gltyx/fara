@@ -905,7 +905,7 @@ var cnItems = {
     "Assist Elder Siegbert": "协助西格伯特长老",
     "Attack Elder Siegbert": "攻击西格伯特长老",
     "Battle Chest": "战斗宝箱",
-    "Big Chest": "大胸",
+    "Big Chest": "大箱子",
     "Change Equipment": "更换设备",
     "CONFIRM FAST TRAVEL": "确认快速旅行",
     "CONFIRM GRAB": "确认抓取",
